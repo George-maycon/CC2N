@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+  // ENTRADA;
+  double B1, B2, PF, media;
+  printf("METODOLOGIA DE NOTAS UVV: Dados de entrada\n");
+  printf("Nota [0.0, 10.0] do bimestre 1 : ");
+  scanf("%f", &B1);
+  printf("Nota [0.0, 10.0] do bimestre 2 : ");
+  scanf("%f", &B2);
+  // TRATAMENTO DE ERRO:
+  if(B1 < 0 || B1 > 10 || B2 < 0 || B2 > 10)
+        printf("ERRO: Valor incorreto\n");
+  else{
+    //media = (B1 + B2) / 2;
+//arrendodamento
+    media = round(media * 10) / 10.0;
+    printf("Media: %.1f\n", media);
+    //if(media < 3.0)
+       // printf("STATUS: Reprovacao.\n");
+    //else if(media < 7.0){
+       // printf("Nota [0.0, 10.0] de prova final:   ");
+        //scanf
+    //}
+
+  //}
+
+//}
+
+exemplo 2
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //entrada
+    float preco, reajuste, valorReajusto;
+    float desconto, acrescimo;
+    int opcao;
+    printf("MERCADORIA: Dados de entrada\n");
+    printf("Menu de opcaoes:\n");
+     printf("[1]: acrescimo\n");
+    printf("[2]: Desconto\n");
+        printf("Sua opcao: "); scanf("%i", &opcao);
+    //tratamento de erro
+    if(opcao != 1 && opcao != 2)
+        printf("ERRO: opçao incorreta\n");
+    else{
+        printf("Preco: R$  "); scanf("%f", &preco);
+        printf("Reajuste (%%):  "); scanf("%f", &reajuste);
+}
+ // tratamento de erro
+
+     if(preco <= 0 || reajuste <= 0)
+         printf("ERRO: valor incorreta\n");
+     else{
+        if(opcao == 1){
+                //valorReajusto = preco + reajuste / 100 * preco;
+                //valorReajusto = preco * (1 + reajuste / 100);
+                acrescimo = reajuste / 100 * preco;
+                valorReajusto = preco + acrescimo;
+                printf("Acrescimo (%.2f %%) : R$ %.2f\n", reajuste, acrescimo);
+
+        }
+        else{
+           //valorReajusto = preco + reajuste / 100 * preco;
+               // valorReajusto = preco * (1 - reajuste / 100);
+                desconto = reajuste / 100 * preco;
+                valorReajusto = preco - desconto;
+                printf("desconto (%.2f %%) : R$ %.2f\n", reajuste, desconto);
+
+
+        }
+        printf("Preco reajustado: R$ %.2f\n", valorReajusto);
+     }
+
+
+    return 0;
+}
