@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int contador, quantidade = 0;
+    printf("SUGESTAO DE SENHAS: \n");
+    //for(contador = 1000; contador <= 9999; contador = contador + 1)
+    //for(contador = 1000; contador <= 9999; contador += 1)
+    //for(contador = 1000; contador <= 9999; contador++)
+     for(contador = 1000; contador < 10000; ++contador){
+
+    // criptografia : impares e multiplos de 39
+    if(contador % 2 != 0 && contador % 21 == 0){
+        quantidade ++;
+        printf("SENHA %i: %i\n", quantidade,contador);
+    }
+     }
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+ int contador,quantidade = 0, X, soma = 0;
+ float  media;
+ printf("CALCULADORA DE IMPARES");
+ printf("INSIRA UM NUMERO MAIOR QUE 1: "); scanf("%i", &X);
+ // tratamento de erro
+ if(X < 1)
+    printf("ERRO: Valor incorreto do Numero\n");
+else{
+    printf("Os impares entre [%i, %.0f] sao:\n", X, pow(X,3));
+    for(contador = X; contador <= pow(X,3);contador++){
+        //impares
+        if(contador % 2 != 0){
+                //enumerar
+            quantidade++;
+            //
+            soma = soma + contador;
+            printf("impar %i: %i\n", quantidade, contador);
+
+        }
+    }
+        media = 1.0 * soma / quantidade;
+        printf("SOMA dos %i Impares eh: %i\n", quantidade, soma);
+        printf("MEDIA dos %i Impares eh: %.1f\n", quantidade, media);
+
+}
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SM 1518.01
+int main()
+{
+    int aluno = 0;   //start
+    float salario, soma = 0, media;
+    printf("PESQUISA SALARIAL UNIVERSITARIA: \n");
+    while(aluno < 3){ //stop
+
+        printf("ALUNO %i - SALARIO (>= R$ %.2f): ", aluno + 1, SM);
+        scanf ("%f", &salario);
+        //TRATAMENTO DE ERRO:
+        if(salario < SM)
+            printf("ERRo: escolha de novo.\n");
+        else{
+            soma = soma + salario;
+            aluno++;
+        }
+
+    }
+media = soma / aluno;
+printf("MEDIA SALARIAL: R$%.2f\n", media);
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int fulano = 0, beltrano = 0, cicrano = 0, voto;
+   int moradores = 0;
+   float pfulano, pbeltrano, pcicrano;
+   printf("VOTACAO PARA SINDICO:\n");
+    printf("MENU DOS CADIDATOS;\n");
+     printf("1: PARA FULANO\n");
+      printf("2: PARA BELTRANO\n");
+       printf("3: PARA CITRANO\n");
+    while(moradores < 100){
+
+        printf("Voto do morador %i: ", moradores + 1);
+        scanf("%i", &voto);
+        // tratamento de erro;
+        if(voto < 0 || voto > 3)
+        printf("ERRO: VOTO INCORRETO, ESCOLHA DE NOVO");
+        else{
+            if(voto == 1)
+                fulano++;
+
+
+
+
+        }
+    }
+    return 0;
+}
+
