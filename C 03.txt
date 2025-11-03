@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float distanciaPQ(float pX, float pY,
+                   float qX, float qY);
+
+
+ float distanciaPQ(float pX, float pY,
+                   float qX, float qY){
+          float distancia;
+          distancia  = sqrt(pow(pX - qX,2) + pow(pY - qY,2));
+          return distancia;
+
+}
+int main()
+{
+    float pX, pY, qX, qY;
+    int opcao;
+    float distancia;
+    printf("opcao 1: calcular distancia de p e q\n");
+     printf("opcao 0: SAIR\n");
+    do{
+         printf("sua Opcao:  ");scanf("%i",&opcao);
+         if(opcao == 0)printf("fim do programa");
+
+    else if( opcao < 0 || opcao > 1){
+         printf("erro selecione o numero correto \n");
+    }
+
+        else if(opcao == 1){
+
+            printf("dados dos ponto P(x,y) : \n");
+             printf("coordenada x - ponto p: ");scanf("%f",&pX);
+              printf("coordenada y - ponto p: ");scanf("%f",&pY);
+              printf("dados dos ponto Q(x,y) : \n");
+              printf("coordenada x - ponto q: ");scanf("%f",&qX);
+              printf("coordenada y - ponto q: ");scanf("%f",&qY);
+              distancia = distanciaPQ(pX,pY,qX,qY);
+
+              printf("distacia P e Q P(%.2f e %.2f) e Q(%.2f e %.2f) e distancia e %.2f ", pX, pY, qX, qY ,distancia);
+        }
+
+
+
+
+    }while( opcao != 0);
+
+
+
+
+    return 0;
+}
