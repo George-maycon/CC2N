@@ -1,0 +1,80 @@
+//biblioteca e constantes
+#include <stdio.h>
+#include <stdlib.h>
+
+
+//prototipo
+int fat(int N);
+int arranjo(int N, int K);
+int combi (int N, int K);
+
+
+// funçao
+int fat(int N){
+    int M = 1, contador;
+    if(N == 0 || N == 1) return 1;
+    for(contador = 2; contador <=N; contador++){
+        M = M * contador;}
+ return M;
+}
+int arranjo(int N, int K){
+    int A;
+    A = fat(N) / fat(N - K);
+    return A;
+    }
+int combi(int N, int K){
+    // reusabilidade
+         int C;
+         C = arranjo(N, K) / fat(K);
+         return C;
+
+           }
+int main()
+{
+    int N,K,A,C,opcao,F;
+
+
+
+ printf("calculadora de fatorial, arranjo e combinação\n");
+printf("selecione a opcao\n");
+printf("opcao 1: calcular fatorial/ arranjo/ combinacao\n");
+printf("opcao 0: sair\n");
+
+do{
+        printf("sua e opcao:  "); scanf("%i",&opcao);
+        if(opcao == 0)
+            printf("fim do programa");
+        else if(opcao < 0 || opcao > 1){
+            printf("ERRO insira o valor correto ");
+        }
+        else if(opcao ==1){
+        printf("dados de entrada\n");
+        printf("N (>=0): "); scanf("%i", &N);
+      printf("K (>=0): "); scanf("%i", &K);
+
+      if(N < 0 || K < 0)
+      printf("ERRO no valor de N ou K");
+
+      else{
+        printf("Resultado da saida\n");
+        F = fat(N);
+        printf("Fatorial (%i) : %i \n", N, F);
+         F = fat(K);
+        printf("Fatorial (%i) : %i \n", K, F);
+        A = arranjo(N,K);
+        printf("arranjo (%i, %i) : %i \n",N , K, A);
+        C = combi(N, K);
+        printf("combinacao (%i, %i) : %i \n",N , K, C);
+      }}
+
+
+}while(opcao != 0);
+
+
+
+
+
+
+
+    return 0;
+}
